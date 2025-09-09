@@ -7,40 +7,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
 
-    <!-- 🎨 Variables de color -->
+    <!-- 🎨 Variables de color y animaciones -->
     <style>
       :root {
-        --color-principal: #323438; /* Azul por defecto */
-        --color-proyecto1: #40864669; /* Amarillo */
-        --color-proyecto2: #198754; /* Verde */
-        --color-proyecto3: #e7e1e2; /* Rojo */
+        --color-principal: #323438;
+        --color-proyecto1: #40864669;
+        --color-proyecto2: #198754;
+        --color-proyecto3: #e7e1e2;
       }
 
-      .bg-main {
-        background-color: var(--color-principal) !important;
+      .bg-main { background-color: var(--color-principal) !important; }
+      .text-main { color: var(--color-principal) !important; }
+      .bg-proyecto1 { background-color: var(--color-proyecto1) !important; }
+      .bg-proyecto2 { background-color: var(--color-proyecto2) !important; }
+      .bg-proyecto3 { background-color: var(--color-proyecto3) !important; }
+      .text-proyecto1 { color: var(--color-proyecto1) !important; }
+      .text-proyecto2 { color: var(--color-proyecto2) !important; }
+      .text-proyecto3 { color: var(--color-proyecto3) !important; }
+
+      /* ✨ Animaciones */
+      .fade-in {
+        animation: fadeIn 1.2s ease-in-out;
       }
-      .text-main {
-        color: var(--color-principal) !important;
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
-      .bg-proyecto1 {
-        background-color: var(--color-proyecto1) !important;
+      /* Tarjetas con efecto hover */
+      .card {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
       }
-      .bg-proyecto2 {
-        background-color: var(--color-proyecto2) !important;
-      }
-      .bg-proyecto3 {
-        background-color: var(--color-proyecto3) !important;
+      .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
       }
 
-      .text-proyecto1 {
-        color: var(--color-proyecto1) !important;
+      /* Botones animados */
+      .btn {
+        transition: all 0.3s ease-in-out;
       }
-      .text-proyecto2 {
-        color: var(--color-proyecto2) !important;
-      }
-      .text-proyecto3 {
-        color: var(--color-proyecto3) !important;
+      .btn:hover {
+        transform: scale(1.08);
       }
     </style>
   </head>
@@ -64,7 +72,7 @@
     </nav>
 
     <!-- Header -->
-    <header class="bg-main text-white text-center py-5">
+    <header class="bg-main text-white text-center py-5 fade-in">
       <div class="container">
         <h2 class="fw-bold">Mis Proyectos 💻</h2>
         <p class="lead">Algunos de los trabajos y prácticas que he desarrollado</p>
@@ -76,7 +84,7 @@
       <div class="container">
         <div class="row g-4">
           <!-- Proyecto 1 -->
-          <div class="col-md-6">
+          <div class="col-md-6 fade-in">
             <div class="card shadow-lg border-0 h-100">
               <img src="img/pana.jpg" class="card-img-top rounded-top" alt="Proyecto Panadería"/>
               <div class="card-body bg-proyecto1 bg-opacity-25">
@@ -90,7 +98,7 @@
             </div>
           </div>
           <!-- Proyecto 2 -->
-          <div class="col-md-6">
+          <div class="col-md-6 fade-in" style="animation-delay: 0.2s;">
             <div class="card shadow-lg border-0 h-100">
               <img src="img/pc.webp" class="card-img-top rounded-top" alt="Proyecto Tienda PC"/>
               <div class="card-body bg-proyecto2 bg-opacity-25">
@@ -104,7 +112,7 @@
             </div>
           </div>
           <!-- Proyecto 3 -->
-          <div class="col-md-6">
+          <div class="col-md-6 fade-in" style="animation-delay: 0.4s;">
             <div class="card shadow-lg border-0 h-100">
               <img src="img/barberia.jpg" class="card-img-top rounded-top" alt="Proyecto Barbería"/>
               <div class="card-body bg-proyecto3 bg-opacity-25">
@@ -122,7 +130,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-main text-white text-center py-4 mt-5">
+    <footer class="bg-main text-white text-center py-4 mt-5 fade-in">
       <p class="mb-2">&copy; 2025 Fernando Medrano. Todos los derechos reservados.</p>
       <div>
         <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
